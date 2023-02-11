@@ -1,17 +1,17 @@
-const display = document.getElementById("display");
-const buttons = document.querySelectorAll("button");
-const clearButton = document.getElementById("clear");
-const addButton = document.getElementById("add");
-const subtractButton = document.getElementById("subtract");
-const multiplyButton = document.getElementById("multiply");
-const divideButton = document.getElementById("divide");
-const decimalButton = document.getElementById("decimal");
-const equalsButton = document.getElementById("equals");
+let display = document.getElementById("display");
+let buttons = document.querySelectorAll("button");
+let clearButton = document.getElementById("clear");
+let addButton = document.getElementById("add");
+let subtractButton = document.getElementById("subtract");
+let multiplyButton = document.getElementById("multiply");
+let divideButton = document.getElementById("divide");
+let decimalButton = document.getElementById("decimal");
+let equalsButton = document.getElementById("equals");
 
-const num1 = null;
-const num2 = null;
-const operator = null;
-const decimalAdded = false;
+let num1 = null;
+let num2 = null;
+let operator = null;
+let decimalAdded = false;
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function() {
