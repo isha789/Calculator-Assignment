@@ -1,21 +1,21 @@
-var display = document.getElementById("display");
-var buttons = document.querySelectorAll("button");
-var clearButton = document.getElementById("clear");
-var addButton = document.getElementById("add");
-var subtractButton = document.getElementById("subtract");
-var multiplyButton = document.getElementById("multiply");
-var divideButton = document.getElementById("divide");
-var decimalButton = document.getElementById("decimal");
-var equalsButton = document.getElementById("equals");
+let display = document.getElementById("display");
+let buttons = document.querySelectorAll("button");
+let clearButton = document.getElementById("clear");
+let addButton = document.getElementById("add");
+let subtractButton = document.getElementById("subtract");
+let multiplyButton = document.getElementById("multiply");
+let divideButton = document.getElementById("divide");
+let decimalButton = document.getElementById("decimal");
+let equalsButton = document.getElementById("equals");
 
-var num1 = null;
-var num2 = null;
-var operator = null;
-var decimalAdded = false;
+let num1 = null;
+let num2 = null;
+let operator = null;
+let decimalAdded = false;
 
-for (var i = 0; i < buttons.length; i++) {
+for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function() {
-    var value = this.innerHTML;
+    const value = this.innerHTML;
     if (!isNaN(value) || value === ".") {
       if (operator === null) {
         if (value === ".") {
