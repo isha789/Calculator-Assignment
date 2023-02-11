@@ -15,8 +15,8 @@ let decimalAdded = false;
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function() {
-    const value = this.innerHTML;
-    if (!isNaN(value) || value === ".") {
+const value = this.innerHTML;
+ if (!isNaN(value) || value === ".") {
       if (operator === null) {
         if (value === ".") {
           num1 = (num1 === null) ? "0." : num1 + value;
