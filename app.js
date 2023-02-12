@@ -1,7 +1,16 @@
+
+const numberButtons = document.querySelectorAll('[data-number]')
+const operationButtons = document.querySelectorAll('[data-operation]')
+const equalsButton = document.querySelector('[data-equals]')
+const deleteButton = document.querySelector('[data-delete]')
+const allClearButton = document.querySelector('[data-all-clear]')
+const previousValueElement = document.querySelector('[data-previous-operand]')
+const currentValueElement = document.querySelector('[data-current-operand]')
+
 class Calculator {
-  constructor(previousOperandTextElement, currentOperandTextElement) {
-    this.previousOperandTextElement = previousOperandTextElement
-    this.currentOperandTextElement = currentOperandTextElement
+  constructor(previousValueElement, currentValueElement) {
+    this.previousValueElement = previousValueElement
+    this.currentValueElement = currentValueElement
     this.clear()
   }
 
@@ -74,27 +83,20 @@ class Calculator {
   }
 
   updateDisplay() {
-    this.currentOperandTextElement.innerText =
+    this.currentValueElement.innerText =
       this.getDisplayNumber(this.currentValue)
     if (this.operation != null) {
-      this.previousOperandTextElement.innerText =
+      this.previousValueElement.innerText =
         `${this.getDisplayNumber(this.previousValue)} ${this.operation}`
     } else {
-      this.previousOperandTextElement.innerText = ''
+      this.previousValueElement.innerText = ''
     }
   }
 }
 
 
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
-const equalsButton = document.querySelector('[data-equals]')
-const deleteButton = document.querySelector('[data-delete]')
-const allClearButton = document.querySelector('[data-all-clear]')
-const previousOperandTextElement = document.querySelector('[data-previous-operand]')
-const currentOperandTextElement = document.querySelector('[data-current-operand]')
 
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+const calculator = new Calculator(previousValueElement, currentValueElement)
 
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
